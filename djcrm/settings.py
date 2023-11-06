@@ -116,10 +116,10 @@ WSGI_APPLICATION = 'djcrm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': "crm",
-        'USER': "mrcrm",
+        'NAME': "u699364163_crm",
+        'USER': "u699364163_mycrm",
         'PASSWORD':"0Gseb!Hc+",
-        'HOST': "gulrez.com",
+        'HOST': "89.117.157.154",
         'PORT': "3306",
     }
 }
@@ -171,11 +171,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static"
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles'),
 
 
 MEDIA_URL = '/media/'
