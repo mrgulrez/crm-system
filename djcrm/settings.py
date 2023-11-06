@@ -117,9 +117,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': "crm",
-        'USER': "gulrez",
-        'PASSWORD':"Abcd123@",
-        'HOST': "localhost",
+        'USER': "mrcrm",
+        'PASSWORD':"0Gseb!Hc+",
+        'HOST': "gulrez.com",
         'PORT': "3306",
     }
 }
