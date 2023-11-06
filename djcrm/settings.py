@@ -113,16 +113,6 @@ WSGI_APPLICATION = 'djcrm.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': "u699364163_crm",
-        'USER': "u699364163_mycrm",
-        'PASSWORD':"0Gseb!Hc+",
-        'HOST': "89.117.157.154",
-        'PORT': "3306",
-    }
-}
 
 # DATABASES = {
 #     'default': {
