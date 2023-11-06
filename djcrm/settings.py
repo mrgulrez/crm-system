@@ -12,24 +12,16 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-import environ 
 import dj_database_url
 
-env = environ.Env(
-    DEBUG=(bool, False)
-)
-
-READ_DOT_ENV_FILE = env.bool('READ_DOT_ENV_FILE', default=False)
-if READ_DOT_ENV_FILE:
-    environ.Env.read_env()
-
-DEBUG = env('DEBUG')
-SECRET_KEY = env('SECRET_KEY')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-ALLOWED_HOSTS = ['.vercel.app', '.netlify.app', '.now.sh', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
+DEBUG = False
+SECRET_Key = "django-insecure-i2)cj-b^+sn30u1l!px7@ltz)z+%56477nzc#xah!s%^19z2#$"
+
 
 # Application definition
 
@@ -88,16 +80,23 @@ WSGI_APPLICATION = 'djcrm.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': env("DB_NAME"),
-        'USER': env("DB_USER"),
-        'PASSWORD': env("DB_PASSWORD"),
-        'HOST': env("DB_HOST"),
-        'PORT': env("DB_PORT"),
-    }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': environ("DB_NAME"),
+#         'USER': environ("DB_USER"),
+#         'PASSWORD': environ("DB_PASSWORD"),
+#         'HOST': environ("DB_HOST"),
+#         'PORT': environ("DB_PORT"),
+#     }
+# }
+
+DATABASE = {
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL')
+    )
 }
+
 
 
 
